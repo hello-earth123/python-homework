@@ -1,9 +1,17 @@
 # 아래 클래스를 수정하시오.
 class Person:
-    #생성자 메서드
-    def __init__(self):
-        pass
-
+    number_of_people = 0
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        Person.increment()
+        
+    def introduce(self):
+        print(f'제 이름은 {self.name} 이고, 저는 {self.age} 살 입니다.')
+    
+    @classmethod
+    def increment(cls):
+        cls.number_of_people += 1
 
 
 person1 = Person("Alice", 25)
